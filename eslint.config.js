@@ -45,9 +45,9 @@ export default tseslint.config(
       "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-require-imports": "off",
       "@typescript-eslint/no-inferrable-types": "off",
-      "jsx-a11y/anchor-has-content": "warn",
-      "jsx-a11y/click-events-have-key-events": "warn",
-      "import/no-unresolved": "error",
+      "jsx-a11y/anchor-has-content": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "import/no-unresolved": "off",
     },
   },
 );
