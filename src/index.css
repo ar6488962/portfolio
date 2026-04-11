@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Background colors */
+    --background: 222 47% 5%;
+    --background-secondary: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Card & Surface */
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 98%;
+    --glass: 222 47% 12% / 0.7;
+
+    /* Popover */
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Primary - Purple */
+    --primary: 258 90% 66%;
+    --primary-glow: 258 90% 76%;
+    --primary-dark: 258 90% 56%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Blue */
+    --secondary: 217 91% 60%;
+    --secondary-glow: 217 91% 70%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* Accent - Cyan */
+    --accent: 199 89% 48%;
+    --accent-glow: 199 89% 58%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Muted */
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border & Input */
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 258 90% 66%;
+
+    /* Special Colors */
+    --pink: 330 81% 60%;
+    --orange: 25 95% 53%;
+    --yellow: 45 93% 47%;
+    --green: 142 76% 36%;
+
+    /* Tech Category Colors */
+    --tech-language: 0 84% 60%;
+    --tech-framework: 142 76% 36%;
+    --tech-tool: 258 90% 66%;
+    --tech-platform: 45 93% 47%;
+    --tech-devops: 330 81% 60%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(199 89% 48%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(258 90% 66%) 0%, hsl(330 81% 60%) 100%);
+
+    /* Shadows */
+    --shadow-primary: 0 0 40px hsl(258 90% 66% / 0.4);
+    --shadow-secondary: 0 0 40px hsl(217 91% 60% / 0.4);
+    --shadow-glow: 0 10px 30px -10px hsl(258 90% 66% / 0.5);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-text-secondary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-secondary);
+  }
+
+  /* Glassmorphism */
+  .glass {
+    background: hsl(var(--glass));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--shadow-primary);
+  }
+
+  .glow-secondary {
+    box-shadow: var(--shadow-secondary);
+  }
+
+  /* Hover scale */
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .hover-scale:hover {
+    @apply scale-105;
+  }
+
+  /* Magnetic hover */
+  .magnetic {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Scroll Typography */
+  .scroll-typography {
+    @apply will-change-transform;
+  }
+
+  .scroll-char {
+    @apply will-change-transform;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  /* Gradient Text Animated */
+  .gradient-text-animated {
+    @apply will-change-transform;
+    animation: gradient-shift 8s linear infinite;
+  }
+
+  /* Hardware acceleration */
+  .hero-bg-image,
+  .hero-content,
+  .scroll-typography,
+  .scroll-char {
+    @apply will-change-transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
