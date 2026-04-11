@@ -183,7 +183,7 @@ export const ContactSection = () => {
                     id="name"
                     placeholder="Your name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, name: e.target.value })}
                     required
                     className="glass"
                   />
@@ -198,7 +198,7 @@ export const ContactSection = () => {
                     type="email"
                     placeholder="your.email@example.com"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFormData({ ...formData, email: e.target.value })}
                     required
                     className="glass"
                   />
@@ -210,13 +210,13 @@ export const ContactSection = () => {
                   </label>
                   <Select
                     value={formData.subject}
-                    onValueChange={(value) => setFormData({ ...formData, subject: value })}
+                    onValueChange={(value: string) => setFormData({ ...formData, subject: value })}
                   >
                     <SelectTrigger className="glass">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {portfolioData.contact.subjects.map((subject) => (
+                      {portfolioData.contact.subjects.map((subject: string) => (
                         <SelectItem key={subject} value={subject}>
                           {subject}
                         </SelectItem>
@@ -233,7 +233,7 @@ export const ContactSection = () => {
                     id="message"
                     placeholder="Tell me about your project or inquiry..."
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setFormData({ ...formData, message: e.target.value })}
                     required
                     rows={6}
                     className="glass resize-none"

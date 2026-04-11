@@ -25,7 +25,7 @@ export const ProfileLinksSection = () => {
         </motion.div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
-          {portfolioData.profileLinks.map((link, index) => {
+          {portfolioData.profileLinks.map((link: any, index: number) => {
             const IconComponent = Icons[link.icon as keyof typeof Icons] as React.ComponentType<{ className?: string }>;
 
             return (

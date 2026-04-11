@@ -160,7 +160,7 @@ export const AchievementsSection = () => {
         >
           <h3 className="text-2xl font-bold mb-6 text-center">Professional Certifications</h3>
           <div className="grid md:grid-cols-3 gap-4">
-            {portfolioData.certifications.map((cert, index) => (
+            {portfolioData.certifications.map((cert: any, index: number) => (
               <motion.div
                 key={cert.name}
                 initial={{ opacity: 0, scale: 0.9 }}

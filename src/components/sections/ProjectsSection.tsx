@@ -72,7 +72,7 @@ const ProjectsSectionComponent = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
           {/* Left Side - Vertically Stacked Projects */}
           <div className="w-full lg:w-1/2 space-y-16 order-2 lg:order-1">
-            {portfolioData.projects.map((proj, index) => (
+            {portfolioData.projects.map((proj: any, index: number) => (
               <motion.div
                 key={proj.id}
                 ref={(el) => (projectRefs.current[index] = el)}
@@ -156,7 +156,7 @@ const ProjectsSectionComponent = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  {project.features.map((feature, idx) => (
+                  {project.features.map((feature: string, idx: number) => (
                     <motion.div 
                       key={idx}
                       initial={{ opacity: 0, x: -20 }}
@@ -181,7 +181,7 @@ const ProjectsSectionComponent = () => {
                     Tech Stack
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, idx) => (
+                    {project.technologies.map((tech: string, idx: number) => (
                       <motion.div
                         key={tech}
                         initial={{ opacity: 0, scale: 0.8 }}

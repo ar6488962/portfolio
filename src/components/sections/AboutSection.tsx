@@ -105,7 +105,7 @@ export const AboutSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-2 pt-4">
-              {portfolioData.about.interests.map((interest, index) => (
+              {portfolioData.about.interests.map((interest: string, index: number) => (
                 <motion.span
                   key={interest}
                   initial={{ opacity: 0, scale: 0.8 }}
