@@ -154,7 +154,7 @@ export const HeroSection = () => {
               className="hover-scale w-full sm:w-auto"
               asChild
             >
-              <a href="/resume.pdf" download="Ankit_Raj_Resume.pdf">
+              <a href="/resume.pdf?v=latest" download="Ankit_Raj_Resume.pdf">
               Download CV
              <Download className="ml-2 h-4 w-4" />
             </a>

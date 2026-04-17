@@ -42,42 +42,45 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: "IPL Match Win Prediction",
+      title: "Loan Approval Prediction Model",
       category: "featured",
-      description: "End-to-end ML project predicting IPL match outcomes using Random Forest classification. Includes full EDA, Label Encoding for categorical variables, and GridSearchCV for hyperparameter tuning.",
-      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Jupyter Notebook"],
+      description: "Built a machine learning model to predict whether a loan should be approved or not using details like income, credit history, and loan amount. Cleaned the dataset, handled missing values, and tried different models to see which one works best.",
+      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Matplotlib"],
       features: [
-        "Random Forest classifier for match outcome prediction",
-        "Exploratory Data Analysis (EDA) on IPL dataset",
-        "Label Encoding for categorical features",
-        "GridSearchCV hyperparameter tuning for best accuracy"
+        "Used Logistic Regression to predict loan approval",
+        "Cleaned the data and handled missing values",
+        "Converted categorical data into numbers for the model",
+        "Tested multiple models like Decision Tree, Random Forest, and XGBoost",
+        "Got around 78% accuracy on test data",
+        "Found that credit history plays the biggest role in approval"
       ],
       metrics: {
-        users: "Academic",
-        performance: 88,
+        users: "Academic Project",
+        performance: "78% Accuracy",
         stars: 0
       },
       links: {
-        demo: "#",
-        github: "https://github.com/ar6488962"
+        demo: "https://loan-approval-prediction-ml-xbt6h27uywavurqn8tmsul.streamlit.app/",
+        github: "https://github.com/ar6488962/loan-approval-prediction-ml"
       },
       image: "project1"
     },
     {
       id: 2,
-      title: "Custom In-Memory LRU Cache",
+      title: "QuizUltimate - Android Quiz App",
       category: "featured",
-      description: "High-performance LRU Cache built from scratch using Hash Map and Doubly Linked List in C++ and Python, achieving O(1) time complexity for both get and put operations. Simulates real-world backend caching.",
-      technologies: ["C++", "Python"],
+      description: "Built an Android quiz app where users can attempt quizzes from different categories and track their scores. Used SQLite to store quiz data and user scores locally. Focused on making the app simple, responsive, and easy to use.",
+      technologies: ["Java", "Android Studio", "SQLite", "XML"],
       features: [
-        "O(1) get and put operations",
-        "HashMap + Doubly Linked List design",
-        "Simulates real-world backend caching mechanisms",
-        "Clean, modular and well-documented code"
+        "Created a quiz app with multiple categories",
+        "Stored questions and scores using SQLite database",
+        "Tracked user score after each quiz",
+        "Designed a simple and responsive user interface",
+        "Handled user navigation between screens using activities"
       ],
       metrics: {
-        users: "Personal",
-        performance: 95,
+        users: "Personal Project",
+        performance: "Works smoothly on Android devices",
         stars: 0
       },
       links: {
@@ -88,19 +91,21 @@ export const portfolioData = {
     },
     {
       id: 3,
-      title: "Student Loan Eligibility & Risk Analysis",
+      title: "Personal Portfolio Website",
       category: "featured",
-      description: "ML model using Logistic Regression to predict student loan eligibility and risk level. Applied data preprocessing, feature selection with Pandas and NumPy, and cross-validation to reduce overfitting.",
-      technologies: ["Python", "Pandas", "Scikit-learn", "NumPy", "Jupyter Notebook"],
+      description: "Built a personal portfolio website to showcase my projects, skills, and achievements. Included detailed projects on Machine Learning and Android development with clear descriptions. Designed with clean UI and organized sections for projects, skills, technologies, certifications, and contact information. Integrated GitHub links for easy access to project source code.",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "JavaScript", "Git", "GitHub"],
       features: [
-        "Logistic Regression for loan eligibility prediction",
-        "Data preprocessing and feature selection",
-        "Cross-validation for improved model reliability",
-        "End-to-end ML pipeline from raw data to predictions"
+        "Responsive portfolio showcasing ML and Android projects",
+        "Organized sections for projects, skills, and achievements",
+        "Clean and modern UI design with Tailwind CSS",
+        "Integrated GitHub profile links and project repositories",
+        "Dynamic content management with structured data",
+        "Smooth navigation and interactive components"
       ],
       metrics: {
-        users: "Academic",
-        performance: 90,
+        users: "Personal Project",
+        performance: "Fully Responsive & Fast",
         stars: 0
       },
       links: {
@@ -108,7 +113,7 @@ export const portfolioData = {
         github: "https://github.com/ar6488962"
       },
       image: "project3"
-    },
+    }
   ],
 
   achievements: {
